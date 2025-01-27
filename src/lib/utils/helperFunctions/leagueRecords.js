@@ -63,7 +63,7 @@ export const getLeagueRecords = async (refresh = false) => {
 	let playoffRecords = new Records();
 
 	// loop through each season until the previous_league_id becomes null (or in some cases 0)
-	while(curSeason && curSeason != 0) {
+	while(curSeason && curSeason != 0 && curSeason !== '1182098323867119616') {
 		const [rosterRes, leagueData] = await waitForAll(
 			getLeagueRosters(curSeason),
 			getLeagueData(curSeason),
